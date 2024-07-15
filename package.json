@@ -1,0 +1,68 @@
+{
+  "name": "webdev-starter-kit-minimal",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "20.14.0",
+    "npm": "10.7.0"
+  },
+  "volta": {
+    "node": "20.14.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:css": "node _tasks/build-css.js",
+    "build:js": "node _tasks/build-js.js",
+    "build:html": "node _tasks/build-html.js",
+    "build:assets": "node _tasks/build-assets.js",
+    "build": "npm run clean && npm-run-all build:*",
+    "watch:css": "chokidar 'src/**/*.pcss' -c 'npm run build:css'",
+    "watch:js": "chokidar 'src/**/*.js' -c 'npm run build:js'",
+    "watch:html": "chokidar 'src/**/*.html' -c 'npm run build:html'",
+    "watch:assets": "chokidar 'public/**/*' -c 'npm run build:assets'",
+    "watch:cleanup": "onchange 'src/**/*' -- npm run cleanup",
+    "lint:css": "stylelint 'src/**/*.pcss'",
+    "lint:js": "eslint 'src/**/*.js'",
+    "lint:html": "eslint 'src/**/*.html'",
+    "format:css": "prettier --write 'src/**/*.pcss'",
+    "format:js": "prettier --write 'src/**/*.js'",
+    "serve": "browser-sync start --config bs-config.js",
+    "watch": "npm-run-all --parallel watch:* serve",
+    "dev": "npm run build && npm run watch",
+    "cleanup": "node _tasks/cleanup.js",
+    "generate-sitemap": "node _tasks/generate-sitemap.js"
+  },
+  "devDependencies": {
+    "@csstools/postcss-global-data": "^2.1.1",
+    "@html-eslint/eslint-plugin": "^0.25.0",
+    "@html-eslint/parser": "^0.25.0",
+    "autoprefixer": "^10.4.19",
+    "browser-sync": "^3.0.2",
+    "chokidar-cli": "^3.0.0",
+    "copyfiles": "^2.4.1",
+    "cpx2": "^7.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "globals": "^15.8.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "postcss-html": "^1.7.0",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^9.6.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "stylelint": "^16.7.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard": "^36.0.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not op_mini all",
+    "ios >16"
+  ]
+}

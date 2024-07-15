@@ -1,0 +1,28 @@
+{
+  // VSCode
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.guides.bracketPairs": true,
+  // ESLint
+  "eslint.validate": [
+    "javascript",
+    "html"
+  ],
+  "eslint.useFlatConfig": true,
+  // Stylelint
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "html",
+    "css",
+    "postcss"
+  ],
+}
