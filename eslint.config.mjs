@@ -47,7 +47,7 @@ export default [
       '@html-eslint/no-positive-tabindex': 'error',
       '@html-eslint/quotes': 'error',
       '@html-eslint/element-newline': 'error',
-      '@html-eslint/require-closing-tags': 'error',
+      '@html-eslint/require-closing-tags': ['error', { selfClosing: 'always' }],
       '@html-eslint/require-li-container': 'error',
       '@html-eslint/require-doctype': 'error',
       '@html-eslint/require-button-type': 'error',
@@ -84,7 +84,7 @@ export default [
       ],
       '@html-eslint/no-extra-spacing-attrs': [
         'error',
-        { disallowMissing: true },
+        { disallowMissing: true, enforceBeforeSelfClose: true },
       ],
     },
   },
