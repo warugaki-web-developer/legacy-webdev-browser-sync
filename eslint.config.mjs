@@ -79,7 +79,7 @@ export default [
       '@html-eslint/sort-attrs': [
         'error',
         {
-          priority: ['id', 'type', 'class', 'style'],
+          priority: ['property', 'rel', 'href', 'src', 'type', 'id', 'name', 'class', 'style'],
         },
       ],
       '@html-eslint/no-extra-spacing-attrs': [
